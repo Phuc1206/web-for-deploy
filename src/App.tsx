@@ -6,7 +6,7 @@ const ImageCard = ({
 	alt,
 	title,
 }: {
-	src: any;
+	src: string;
 	alt: string;
 	title: string;
 }) => {
@@ -15,8 +15,8 @@ const ImageCard = ({
 			<img
 				src={src}
 				alt={alt}
-				onError={(e) => {
-					e.target.src =
+				onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
+					(e.currentTarget as HTMLImageElement).src =
 						"https://placehold.co/600x400/ff4444/ffffff?text=Loi+Tai+Anh";
 				}}
 			/>
